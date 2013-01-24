@@ -3,10 +3,6 @@
 var prefabBullet:Transform;
 var shootForce:float;
 
-function Start() {
-
-}
-
 function Update() {
     if (Input.GetKeyDown('up'))
         Shoot(transform.forward);
@@ -17,11 +13,16 @@ function Update() {
     if (Input.GetKeyDown('right'))
         Shoot(transform.right);
 
-    if (Input.GetKey('space'))
+    if (Input.GetKeyDown('space')) {
         Shoot(-transform.up);
+        Shoot(transform.forward);
+        Shoot(-transform.forward);
+        Shoot(transform.right);
+        Shoot(-transform.right);
+    }
 }
 
 function Shoot(direction:Vector3) {
     var instanceBullet = Instantiate(prefabBullet, transform.position+Vector3.up - direction, Quaternion.identity);
-    instanceBullet.rigidbody.AddForce((-direction+(Vector3.up/3)) * shootForce);
+    instanceBullet.rigidbody.AddForce((-direction+(Vector3.up)) * shootForce);
 }
