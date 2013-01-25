@@ -46,7 +46,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\script_bullet.js" />
      <Compile Include="Assets\Scripts\script_camera_movement.js" />
-     <Compile Include="Assets\Scripts\script_ghost_bullet.js" />
+     <Compile Include="Assets\Scripts\script_death_plane.js" />
      <Compile Include="Assets\Scripts\script_player_movement.js" />
      <Compile Include="Assets\Scripts\script_player_shoot.js" />
   </ItemGroup>
